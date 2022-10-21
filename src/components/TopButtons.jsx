@@ -9,7 +9,7 @@ const TopButtons = () => {
       {fetchedCities.map((fetchedCity) => (
         <button
           key={fetchedCity.id}
-          className="text-[#fff] opacity-90 text-lg md:text-xl font-bold transition ease-in-out hover:scale-105 hover:opacity-100"
+          className="text-[#fff] opacity-80 text-lg md:text-xl font-semibold transition ease-in-out hover:scale-105 hover:opacity-100 text-center"
         >
           {fetchedCity.title}
         </button>
