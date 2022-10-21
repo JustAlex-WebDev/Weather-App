@@ -16,20 +16,20 @@ const Inputs = () => {
         </form>
         <HiOutlineLocationMarker
           size={22}
-          className="text-[#fff] min-w-[1.5rem] cursor-pointer rounded-2xl text-xl transition ease-in-out hover:scale-110"
+          className="text-[#fff] min-w-[1.5rem] cursor-pointer rounded-2xl text-xl transition ease-in-out hover:scale-110 opacity-90 hover:opacity-100"
         />
       </div>
       <div className="flex flex-row w-1/4 items-center justify-end gap-2">
         <button
           name="metric"
-          className="text-base sm:text-lg text-[#fff] opacity-90 hover:opacity-100 font-semibold transition ease-in-out hover:scale-110"
+          className="text-base sm:text-lg text-[#fff] opacity-80 hover:opacity-100 font-semibold transition ease-in-out hover:scale-110"
         >
           °C
         </button>
-        <span className="text-xl text-[#fff]">/</span>
+        <span className="text-xl text-[#fff] opacity-70">/</span>
         <button
           name="imperial"
-          className="text-base sm:text-lg text-[#fff] opacity-90 hover:opacity-100 font-semibold transition ease-in-out hover:scale-110"
+          className="text-base sm:text-lg text-[#fff] opacity-80 hover:opacity-100 font-semibold transition ease-in-out hover:scale-110"
         >
           °F
         </button>
