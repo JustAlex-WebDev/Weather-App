@@ -1,16 +1,12 @@
 import React from "react";
-import TopButtons from "./components/TopButtons";
-import Inputs from "./components/Inputs";
-import TimeAndLocation from "./components/TimeAndLocation";
-import TemperatureAndDetails from "./components/TemperatureAndDetails";
+import Navbar from "./components/Navbar";
+import MainSection from "./components/MainSection";
 
 function App() {
   return (
-    <div className="main-div bg-blue-300 py-5 shadow-xl">
-      <TopButtons />
-      <Inputs />
-      <TimeAndLocation />
-      <TemperatureAndDetails />
+    <div>
+      <Navbar />
+      <MainSection />
     </div>
   );
 }

@@ -2,9 +2,9 @@ import React from "react";
 
 const TimeAndLocation = () => {
   return (
-    <div>
+    <div className="pb-6">
       <div className="flex items-center justify-center my-6">
-        <p className="text-[#fff] text-xl text-center">
+        <p className="text-[#fff] text-lg text-center">
           Tuesday, 31 May 2022 | Local time: 12:46 PM
         </p>
       </div>
