@@ -1,7 +1,9 @@
 import React from "react";
 import { TbTemperature } from "react-icons/tb";
 import { RiWindyFill } from "react-icons/ri";
+import { FiSunrise, FiSunset } from "react-icons/fi";
 import { MdOutlineWaterDrop } from "react-icons/md";
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 
 const TemperatureAndDetails = () => {
   return (
@@ -29,6 +31,33 @@ const TemperatureAndDetails = () => {
             <RiWindyFill size={22} className="mr-1" />
             Wind: <span className="ml-1">3 km/h</span>
           </div>
+        </div>
+      </div>
+      <div className="flex flex-row items-center justify-center gap-8 xsm:gap-2 mt-8 text-sm py-3 text-[#fff] text-center">
+        <div className="flex flex-col xsm:flex-row items-center justify-center gap-4 xsm:gap-2">
+          <FiSunrise size={22} className="mr-1" />
+          <p>
+            Rise: <span className="ml-1">06:45 AM</span>
+          </p>
+          <p className="hidden xsm:block">|</p>
+
+          <AiOutlineArrowUp size={22} className="mr-1" />
+          <p>
+            High: <span className="ml-1">45°</span>
+          </p>
+          <p className="hidden xsm:block">|</p>
+        </div>
+        <div className="flex flex-col xsm:flex-row items-center justify-center gap-4 xsm:gap-2">
+          <FiSunset size={22} className="mr-1" />
+          <p>
+            Set: <span className="ml-1">07:35 PM</span>
+          </p>
+          <p className="hidden xsm:block">|</p>
+
+          <AiOutlineArrowDown size={22} className="mr-1" />
+          <p>
+            Low: <span className="ml-1">40°</span>
+          </p>
         </div>
       </div>
     </div>
