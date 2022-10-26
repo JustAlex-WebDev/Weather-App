@@ -4,7 +4,7 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 
 const Inputs = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between pt-4 pb-6 text-center md:text-right">
+    <div className="flex flex-col md:flex-row justify-between pt-4 pb-6 items-center text-center md:text-right">
       <h1 className="text-2xl font-bold my-2 text-[#fff]">Search A City</h1>
       <form className="relative mr-8">
         <AiOutlineSearch className="absolute top-0 left-0 text-xl rounded-2xl cursor-pointer mt-2 ml-4 text-primary" />
