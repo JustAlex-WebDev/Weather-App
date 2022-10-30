@@ -5,9 +5,9 @@ import { FiSunrise, FiSunset } from "react-icons/fi";
 import { MdOutlineWaterDrop } from "react-icons/md";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 
-const TemperatureAndDetails = () => {
+const TemperatureAndDetails = ({ weather }) => {
   return (
-    <div className="pb-6">
+    <div className="pb-4">
       <div className="flex items-center justify-center py-6 text-xl font-semibold text-[#fff]">
         <p>Sunny</p>
       </div>
