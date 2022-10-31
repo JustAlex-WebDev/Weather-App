@@ -4,32 +4,65 @@ import { RiWindyFill } from "react-icons/ri";
 import { FiSunrise, FiSunset } from "react-icons/fi";
 import { MdOutlineWaterDrop } from "react-icons/md";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import { formatToLocalTime, iconUrlFromCode } from "../services/weatherService";
 
-const TemperatureAndDetails = ({ weather }) => {
+const TemperatureAndDetails = ({
+  weather: {
+    details,
+    icon,
+    temp,
+    temp_min,
+    temp_max,
+    sunrise,
+    sunset,
+    speed,
+    humidity,
+    feels_like,
+    timezone,
+  },
+  units,
+}) => {
   return (
     <div className="pb-4">
       <div className="flex items-center justify-center py-6 text-xl font-semibold text-[#fff]">
-        <p>Sunny</p>
+        <p>{details}</p>
       </div>
       <div className="flex flex-col xxsm:flex-row items-center justify-center gap-8 xxsm:gap-16 text-[#fff]">
-        <img
-          src="http://openweathermap.org/img/wn/01d@2x.png"
-          alt=""
-          className="w-20"
-        />
-        <p className="text-5xl font-semibold">34°</p>
+        <img src={iconUrlFromCode(icon)} alt="" className="w-20" />
+        {units === "imperial" ? (
+          <p className="text-5xl font-semibold">
+            {`${temp.toFixed()}`}
+            <span className="text-2xl absolute">°F</span>
+          </p>
+        ) : (
+          <p className="text-5xl font-semibold">
+            {`${temp.toFixed()}`}
+            <span className="text-2xl absolute">°C</span>
+          </p>
+        )}
         <div className="flex flex-col space-y-2">
           <div className="flex text-sm items-center justify-center">
             <TbTemperature size={22} className="mr-1" />
-            Real feel: <span className="ml-1">32°</span>
+            Real feel:{" "}
+            {units === "imperial" ? (
+              <span className="ml-1">
+                {`${feels_like.toFixed()}`}
+                <span className="text-sm absolute">°F</span>
+              </span>
+            ) : (
+              <span className="ml-1">
+                {`${feels_like.toFixed()}`}
+                <span className="text-sm absolute">°C</span>
+              </span>
+            )}
           </div>
           <div className="flex text-sm items-center justify-center">
             <MdOutlineWaterDrop size={22} className="mr-1" />
-            Humidity: <span className="ml-1">32°</span>
+            Humidity: <span className="ml-1">{`${humidity.toFixed()}%`}</span>
           </div>
           <div className="flex text-sm items-center justify-center">
             <RiWindyFill size={22} className="mr-1" />
-            Wind: <span className="ml-1">3 km/h</span>
+            Wind: <span className="ml-1">{`${speed.toFixed()} km/h`}</span>
           </div>
         </div>
       </div>
@@ -37,27 +70,61 @@ const TemperatureAndDetails = ({ weather }) => {
         <div className="flex flex-col xsm:flex-row items-center justify-center gap-4 xsm:gap-2">
           <FiSunrise size={22} className="mr-1" />
           <p>
-            Rise: <span className="ml-1">06:45 AM</span>
+            Rise:{" "}
+            <span className="ml-1">
+              {formatToLocalTime(sunrise, timezone, "hh:mm a")}
+            </span>
           </p>
           <p className="hidden xsm:block">|</p>
 
           <AiOutlineArrowUp size={22} className="mr-1" />
-          <p>
-            High: <span className="ml-1">45°</span>
-          </p>
+          {units === "imperial" ? (
+            <p>
+              High:{" "}
+              <span className="ml-1 mr-4">
+                {`${temp_max.toFixed()}`}
+                <span className="text-sm absolute">°F</span>
+              </span>
+            </p>
+          ) : (
+            <p>
+              High:{" "}
+              <span className="ml-1 mr-4">
+                {`${temp_max.toFixed()}`}
+                <span className="text-sm absolute">°C</span>
+              </span>
+            </p>
+          )}
           <p className="hidden xsm:block">|</p>
         </div>
         <div className="flex flex-col xsm:flex-row items-center justify-center gap-4 xsm:gap-2">
           <FiSunset size={22} className="mr-1" />
           <p>
-            Set: <span className="ml-1">07:35 PM</span>
+            Set:{" "}
+            <span className="ml-1">
+              {formatToLocalTime(sunset, timezone, "hh:mm a")}
+            </span>
           </p>
           <p className="hidden xsm:block">|</p>
 
           <AiOutlineArrowDown size={22} className="mr-1" />
-          <p>
-            Low: <span className="ml-1">40°</span>
-          </p>
+          {units === "imperial" ? (
+            <p>
+              Low:{" "}
+              <span className="ml-1">
+                {`${temp_min.toFixed()}`}
+                <span className="text-sm absolute">°F</span>
+              </span>
+            </p>
+          ) : (
+            <p>
+              Low:{" "}
+              <span className="ml-1">
+                {`${temp_min.toFixed()}`}
+                <span className="text-sm absolute">°C</span>
+              </span>
+            </p>
+          )}
         </div>
       </div>
     </div>

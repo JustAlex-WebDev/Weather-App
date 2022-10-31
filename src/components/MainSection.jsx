@@ -3,12 +3,12 @@ import Inputs from "./Inputs";
 import TemperatureAndDetails from "./TemperatureAndDetails";
 import TimeAndLocation from "./TimeAndLocation";
 
-const MainSection = ({ weather }) => {
+const MainSection = ({ weather, setQuery, units, handleBackground }) => {
   return (
-    <div className="main-div bg-blue-300 mb-24 mt-28">
-      <Inputs />
+    <div className="main-div mb-24 mt-28 bg-blue-300">
+      <Inputs setQuery={setQuery} />
       <TimeAndLocation weather={weather} />
-      <TemperatureAndDetails weather={weather} />
+      <TemperatureAndDetails weather={weather} units={units} />
     </div>
   );
 };

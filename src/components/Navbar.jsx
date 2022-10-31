@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { cities } from "../data";
 import { FaUmbrella } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ setQuery, handleUnits, handleBackground }) => {
   const [fetchedCities] = useState(cities);
 
   return (
-    <div className="bg-blue-300 w-full shadow-md fixed top-0 z-50">
+    <div className="w-full shadow-md fixed top-0 z-50 bg-blue-300">
       <div className="main-div flex items-center justify-between h-20 font-bold text-[#fff]">
         <div className="cursor-pointer">
           <h1 className="text-lg hover:opacity-50 flex justify-center">
@@ -20,6 +20,7 @@ const Navbar = () => {
           {fetchedCities.map((fetchedCity) => (
             <button
               key={fetchedCity.id}
+              onClick={() => setQuery({ q: fetchedCity.title })}
               className="hover:opacity-50 transition hover:scale-105 ease-in-out text-base lg:text-lg"
             >
               {fetchedCity.title}
@@ -27,11 +28,19 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex items-center gap-2">
-          <button name="metric" className="hover:opacity-50">
+          <button
+            name="metric"
+            onClick={handleUnits}
+            className="hover:opacity-50"
+          >
             °C
           </button>
           <span className="text-sm">/</span>
-          <button name="imperial" className="hover:opacity-50">
+          <button
+            name="imperial"
+            onClick={handleUnits}
+            className="hover:opacity-50"
+          >
             °F
           </button>
         </div>
