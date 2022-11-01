@@ -10,6 +10,17 @@ module.exports = {
       lg: "1024px",
       xl: "1280px",
     },
+    extend: {
+      animation: {
+        animateOpacity: "animateOpacity 2s ease",
+      },
+      keyframes: {
+        animateOpacity: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+    },
   },
   plugins: [],
 };
