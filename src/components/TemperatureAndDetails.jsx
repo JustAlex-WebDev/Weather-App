@@ -47,12 +47,12 @@ const TemperatureAndDetails = ({
             {units === "imperial" ? (
               <span className="ml-1">
                 {`${feels_like.toFixed()}`}
-                <span className="text-sm absolute">°F</span>
+                <span className="text-sm">°F</span>
               </span>
             ) : (
               <span className="ml-1">
                 {`${feels_like.toFixed()}`}
-                <span className="text-sm absolute">°C</span>
+                <span className="text-sm">°C</span>
               </span>
             )}
           </div>

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
 import MainSection from "./components/MainSection";
 import getFormattedWeatherData from "./services/weatherService";
+import LoadingAnimation from "./components/LoadingAnimation";
 
 function App() {
   const [query, setQuery] = useState({ q: "paris" });
   const [units, setUnits] = useState("metric");
   const [weather, setWeather] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -29,13 +31,30 @@ function App() {
   //   return "bg-red-300";
   // };
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+  }, []);
+
   return (
-    <div>
-      {weather && (
-        <>
-          <Navbar setQuery={setQuery} handleUnits={handleUnits} />
-          <MainSection setQuery={setQuery} weather={weather} units={units} />
-        </>
+    <div className="bg-blue-300">
+      {loading ? (
+        <LoadingAnimation />
+      ) : (
+        <div className="flex h-[100vh]">
+          {weather && (
+            <>
+              <Navbar setQuery={setQuery} handleUnits={handleUnits} />
+              <MainSection
+                setQuery={setQuery}
+                weather={weather}
+                units={units}
+              />
+            </>
+          )}
+        </div>
       )}
     </div>
   );
