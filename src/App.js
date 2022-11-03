@@ -35,7 +35,7 @@ function App() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1800);
+    }, 2000);
   }, []);
 
   return (
@@ -43,7 +43,7 @@ function App() {
       {loading ? (
         <LoadingAnimation />
       ) : (
-        <div className="flex h-[100vh]">
+        <div className="">
           {weather && (
             <>
               <Navbar setQuery={setQuery} handleUnits={handleUnits} />
