@@ -30,14 +30,14 @@ const TemperatureAndDetails = ({
       <div className="flex flex-col xxsm:flex-row items-center justify-center gap-8 xxsm:gap-16 text-[#fff]">
         <img src={iconUrlFromCode(icon)} alt="" className="w-20" />
         {units === "imperial" ? (
-          <p className="text-5xl font-semibold">
+          <p className="text-5xl font-semibold flex">
             {`${temp.toFixed()}`}
-            <span className="text-2xl absolute">°F</span>
+            <span className="text-2xl">°F</span>
           </p>
         ) : (
-          <p className="text-5xl font-semibold">
+          <p className="text-5xl font-semibold flex">
             {`${temp.toFixed()}`}
-            <span className="text-2xl absolute">°C</span>
+            <span className="text-2xl">°C</span>
           </p>
         )}
         <div className="flex flex-col space-y-2">

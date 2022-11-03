@@ -6,7 +6,7 @@ const Navbar = ({ setQuery, handleUnits, handleBackground }) => {
   const [fetchedCities] = useState(cities);
 
   return (
-    <div className="w-full shadow-md fixed top-0 z-50 bg-blue-300">
+    <div className="w-full shadow-md fixed top-0 z-50 bg-blue-300 animate-animateOpacity">
       <div className="main-div flex items-center justify-between h-20 font-bold text-[#fff]">
         <div className="cursor-pointer">
           <h1 className="text-lg hover:opacity-50 flex justify-center">
