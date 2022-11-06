@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import MainSection from "./components/MainSection";
 import getFormattedWeatherData from "./services/weatherService";
 import LoadingAnimation from "./components/LoadingAnimation";
+import Footer from "./components/Footer";
 
 function App() {
   const [query, setQuery] = useState({ q: "paris" });
@@ -52,6 +53,7 @@ function App() {
                 weather={weather}
                 units={units}
               />
+              <Footer />
             </>
           )}
         </div>
