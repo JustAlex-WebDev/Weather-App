@@ -50,7 +50,7 @@ const Footer = () => {
         <FaFacebook className="hover:opacity-50 cursor-pointer" />
       </div>
       <p className="text-center py-4">
-        © 2022 Art Connection, Inc. All Rights Reserved
+        © 2022 Outsider, Inc. All Rights Reserved
       </p>
     </div>
   );
