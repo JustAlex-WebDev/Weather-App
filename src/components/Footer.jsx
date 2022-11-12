@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="main-div pt-12 text-[#fff] mt-24">
+    <div className="main-div animate-animateOpacity pt-12 text-[#fff] mt-24">
       <div className="flex justify-center">
         <div className="flex justify-evenly gap-12 w-full uppercase">
           <div>
@@ -30,13 +30,13 @@ const Footer = () => {
                 About Us
               </li>
               <li className="text-sm py-2 hover:opacity-50 cursor-pointer">
-                Artists
+                Forecasters
               </li>
               <li className="text-sm py-2 hover:opacity-50 cursor-pointer">
                 Members
               </li>
               <li className="text-sm py-2 hover:opacity-50 cursor-pointer">
-                Invest
+                More
               </li>
             </ul>
           </div>
